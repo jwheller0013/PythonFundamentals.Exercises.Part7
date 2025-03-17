@@ -4,16 +4,25 @@ from typing import Dict
 # Use integers for keys and strings for values.
 # Example: Key = 1. Value = 'English'.
 lang_dict = {
+    1: 'English',
+    2: 'Spanish',
+    3: 'Portuguese'
 }
 
 # Populate this dictionary with appropriate prompts that correspond with the ids from lang_dict.
 # Example: Key = 1. Value = 'What is your name?'.
 name_prompt_dict = {
+    1: 'What is your name?',
+    2: '¿Cómo te llamas?',
+    3: 'Qual é o seu nome?'
 }
 
 # Populate this dictionary with appropriate prompts that correspond with the ids from lang_dict.
 # Example: Key = 1. Value = 'Hello'.
 greetings_dict = {
+    1: 'Hello',
+    2: 'Hola',
+    3: 'Olá'
 }
 
 
@@ -27,6 +36,9 @@ def print_language_options(lang_options: Dict[int, str]) -> None:
     :return: None
     """
     pass  # remove pass statement and implement me
+    print("Please choose a language: ")
+    for x, y in lang_options.items():
+        print(f"{x}: {y}")
 
 
 def language_input() -> int:
@@ -36,7 +48,8 @@ def language_input() -> int:
     :return: An integer representing the language choice made by the user
     """
     pass  # remove pass statement and implement me
-
+    user_input = input()
+    return int(user_input)
 
 def language_choice_is_valid(lang_options: Dict[int, str], lang_choice: int) -> bool:
     """
