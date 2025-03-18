@@ -86,12 +86,15 @@ def get_name_input(name_prompt_options: Dict[int, str], lang_choice: int) -> str
     """
     pass  # remove pass statement and implement me
 
-    for key, value in name_prompt_options.items():
-        if key == lang_choice:
-            print(f"{key}: {value}")
+    # for key, value in name_prompt_options.items():
+    #     if key == lang_choice:
+    #         return(f"{key}: {value}")
             # print(key, ': ', value)
     #fails test but works in terminal
 
+    var = name_prompt_options[lang_choice]
+    return var
+    #has to be print = (var) for program to run but then fails tests
 
 def name_input(name_prompt: str) -> str:
     """
@@ -115,11 +118,14 @@ def greet(name: str, greetings_options: Dict[int, str], lang_choice: int) -> Non
     :return:
     """
     pass  # remove pass statement and implement me
-    for key, value in greetings_options.items():
-        if key == lang_choice:
-            print(f"{key}: {value} {name}")
+    # for key, value in greetings_options.items():
+    #     if key == lang_choice:
+    #         print (f"{key}: {value} {name}")
             # print(key, ': ', value, name)
     #fails test but works in terminal
+
+    var = greetings_options[lang_choice]
+    print(f"{var} " + name)
 
 if __name__ == '__main__':
     print_language_options(lang_dict)
