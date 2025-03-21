@@ -63,15 +63,17 @@ def language_choice_is_valid(lang_options: Dict[int, str], lang_choice: int) -> 
     :return: A boolean representing the validity of the lang_choice
     """
     pass  # remove pass statement and implement me
-    choice_valid = True
-    if not isinstance(lang_choice, int):
-        choice_valid = False
-        return choice_valid
-    if 1 <= lang_choice <= 3:
-        return choice_valid
-    else:
-        choice_valid = False
-        return choice_valid
+    # choice_valid = True
+    # if not isinstance(lang_choice, int):
+    #     choice_valid = False
+    #     return choice_valid
+    # if 1 <= lang_choice <= 3:
+    #     return choice_valid
+    # else:
+    #     choice_valid = False
+    #     return choice_valid
+    return lang_choice in lang_options
+
 
 
 def get_name_input(name_prompt_options: Dict[int, str], lang_choice: int) -> str:
