@@ -1,6 +1,30 @@
 import multilingual_greeter
 from typing import Dict
 
+#New features
+
+def key_input(lang_dict: Dict[int, str]) -> int:
+    key = input("Enter next open key value:\n")
+        while True:
+            if key in lang_dict:
+                key = input("Please select an open key value:\n")
+            else:
+                break
+        return key
+
+def add_lang_input(lang_dict: Dict[int, str]) -> str:
+    lang = input("Please enter desired language to add:\n")
+    while True:
+        if lang in lang_dict.lang():
+            lang = input("Language already in dictionary, please review selection:\n")
+        else:
+            break
+    return lang
+
+
+
+
+
 if __name__ == '__main__':
     user_mode = False
     mode_admin = False
