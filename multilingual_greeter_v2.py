@@ -16,3 +16,15 @@ if __name__ == '__main__':
             mode_user = True
             user_mode = True
     #handles mode selection
+
+    while mode_user:
+        multilingual_greeter.print_language_options(multilingual_greeter.lang_dict)
+        chosen_lang = multilingual_greeter.language_input()
+        while multilingual_greeter.language_choice_is_valid(multilingual_greeter.lang_dict, chosen_lang) is False:
+            print("Unavailble, select again.")
+            chosen_lang = multilingual_greeter.language_input()
+
+        select_prompt = f"{multilingual_greeter.get_name_input(multilingual_greeter.name_prompt_dict, chosen_lang)} \n"
+        chosen_name = multilingual_greeter.name_input(select_prompt)
+        multilingual_greeter.greet(chosen_name, multilingual_greeter.greetings_dict, chosen_lang)
+    #handles mode_user

@@ -93,7 +93,7 @@ def get_name_input(name_prompt_options: Dict[int, str], lang_choice: int) -> str
     #fails test but works in terminal
 
     var = name_prompt_options[lang_choice]
-    return var
+    print (var)
     #has to be print = (var) for program to run but then fails tests
 
 def name_input(name_prompt: str) -> str:
