@@ -10,7 +10,7 @@ def key_input(lang_dict: Dict[int, str]) -> int:
             key = input("Please select an open key value:\n")
         else:
             break
-    return key
+    return int(key)
 
 def add_lang_input(lang_dict: Dict[int, str]) -> str:
     lang = input("Please enter desired language to add:\n")
@@ -48,7 +48,7 @@ if __name__ == '__main__':
             multilingual_greeter.print_language_options(multilingual_greeter.lang_dict)
             chosen_lang = multilingual_greeter.language_input()
             while multilingual_greeter.language_choice_is_valid(multilingual_greeter.lang_dict, chosen_lang) is False:
-                print("Unavailble, select again.")
+                print("Unavailable, select again.")
                 chosen_lang = multilingual_greeter.language_input()
 
             select_prompt = f"{multilingual_greeter.get_name_input(multilingual_greeter.name_prompt_dict, chosen_lang)} \n"
@@ -67,6 +67,5 @@ if __name__ == '__main__':
 
             user_mode = False
             mode_admin = False
-            break
             #need a way to restart with added languages
         #handles mode_admin
