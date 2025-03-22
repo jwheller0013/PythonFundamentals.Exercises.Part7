@@ -14,12 +14,10 @@ name_prompt_dict = {
     3: 'Qual é o seu nome?'
 }
 
-# greetings need to be changed so values are a list not a string
-# then need to be able to select a random greeting from list
 greetings_dict = {
     1: ['Hello', 'Hi', 'Greetings'],
-    2: 'Hola',
-    3: 'Olá'
+    2: ['Hola', 'Saludos', 'Buenos dias'],
+    3: ['Olá', 'Boa tarde', 'Bom dia']
 }
 
 #brought over from v1
@@ -43,9 +41,10 @@ def name_input(name_prompt: str) -> str:
     user_input = input()
     return str(user_input)
 
-#updated to choose between list options 0-3 but needs to be made for len of list
+#updated to choose between list options
 def greet(name: str, greetings_options: Dict[int, str], lang_choice: int) -> None:
-    x = random.randrange(0, 3)
+    y = len(greetings_dict[lang_choice])
+    x = random.randrange(0, (y-1))
     var = greetings_options[lang_choice][x]
     print(f"{var} " + name)
 
@@ -106,11 +105,13 @@ if __name__ == '__main__':
             new_key = key_input(lang_dict)
             new_lang = add_lang_input(lang_dict)
             new_name_prompt = add_name_prompt()
-            new_greeting = add_greeting()
-            #needs to be updated to add to a list i.e. somelist.append(new_greeting)
             lang_dict[new_key] = new_lang
             name_prompt_dict[new_key] = new_name_prompt
-            greetings_dict[new_key] = new_greeting
-
+            greetings_dict[new_key] = []
+            for i in range(3):
+                print('Please keep adding greetings till there are three:')
+                new_greeting = add_greeting()
+                greetings_dict[new_key].append(new_greeting)
+            #this handles making a list of 3 greetings for new language
             user_mode = False
             mode_admin = False
